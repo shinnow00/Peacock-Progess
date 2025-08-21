@@ -1,0 +1,20 @@
+<header class="toolbar">
+  <span class="toolbar-title"
+    ><a href="/"><img src="../assets/favicon3.png" style="width: 100%; width: 80px" alt="" /></a
+  ></span>
+  <span class="toolbar-spacer"></span>
+
+  <div *ngIf="authService.isAuthenticated()">
+    <button class="nav-btn" routerLink="/home">Home</button>
+    <button class="nav-btn" routerLink="/admin" *ngIf="authService.isAdmin()">Admin</button>
+    <button class="nav-btn" (click)="logout()">Logout</button>
+  </div>
+
+  <div *ngIf="!authService.isAuthenticated()">
+    <button class="nav-btn" routerLink="/login">Login</button>
+  </div>
+</header>
+
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>

@@ -1,0 +1,164 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Global utility classes */
+.full-width {
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* GitHub Dark theme variables */
+:root {
+  --bg: #0d1117;         /* app background */
+  --panel: #0d1117;      /* panels/canvas */
+  --panel-2: #161b22;    /* cards/surface */
+  --text: #c9d1d9;       /* primary text */
+  --muted: #8b949e;      /* secondary text */
+  --brand: #58a6ff;      /* accent (link/primary) */
+  --brand-2: #79c0ff;    /* accent lighter */
+  --border: #30363d;     /* border/subtle */
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Panels and cards */
+.card, .panel, .list-card, .form-card {
+  background: var(--panel-2) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+}
+
+/* Homepage progress cards */
+.progress-card {
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.progress-card .card-header {
+  background: transparent;
+  border-bottom: 1px solid var(--border);
+}
+
+.progress-card h3, .progress-card .mat-card-title, .progress-card .mat-card-subtitle {
+  color: var(--text);
+}
+
+.progress-card .description {
+  color: rgba(243, 244, 246, 0.85); /* near-white for body text */
+}
+
+.progress-card .tag, .tag {
+  background: rgba(88, 166, 255, 0.1); /* accent wash */
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.progress-image, .preview-image {
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+/* Admin list items */
+.progress-item {
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 10px;
+}
+
+.progress-item .item-content h3 {
+  color: var(--text);
+}
+
+.progress-item .item-content p {
+  color: rgba(243, 244, 246, 0.85);
+}
+
+.progress-item .date {
+  color: var(--muted);
+}
+
+.card-header {
+  background: transparent !important;
+  color: var(--text) !important;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2)) !important;
+  border: 1px solid var(--border) !important;
+  color: #0d1117 !important;
+}
+
+.reset-btn {
+  background: transparent !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+}
+
+input.form-input, textarea.form-textarea {
+  background: #0d1117;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+input.form-input::placeholder, textarea.form-textarea::placeholder {
+  color: var(--muted);
+}
+
+.file-upload-label {
+  background: #0d1117 !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+
+.file-chip {
+  background: rgba(99, 102, 241, 0.1) !important;
+  border-color: rgba(99, 102, 241, 0.2) !important;
+  color: var(--text) !important;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .card, .panel, .list-card, .form-card {
+    border-radius: 10px;
+  }
+}
