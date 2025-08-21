@@ -4,5 +4,8 @@
   "scripts": {
     "vercel-build": "cd frontend && npm install --legacy-peer-deps && npm run build",
     "build:frontend": "cd frontend && npm install --legacy-peer-deps && npm run build"
+  },
+  "dependencies": {
+    "@vercel/blob": "^1.1.1"
   }
 }
