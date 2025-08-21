@@ -1,0 +1,8 @@
+{
+  "name": "peacock-progress-monorepo",
+  "private": true,
+  "scripts": {
+    "vercel-build": "cd frontend && npm install --legacy-peer-deps && npm run build",
+    "build:frontend": "cd frontend && npm install --legacy-peer-deps && npm run build"
+  }
+}

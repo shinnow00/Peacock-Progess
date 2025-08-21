@@ -4,7 +4,7 @@ require("dotenv").config();
 const connectDB = async () => {
   try {
     // Use default values if .env is not available
-    const mongoUri = "mongodb+srv://gel0om0o:V1wkL0UxwHHHXb7s@cluster0.be9cawk.mongodb.net/"
+    const mongoUri = "mongodb+srv://gel0om0o:V1wkL0UxwHHHXb7s@cluster0.be9cawk.mongodb.net/";
     const jwtSecret = process.env.JWT_SECRET || "default-jwt-secret-change-in-production";
 
     console.log("Connecting to MongoDB...");
