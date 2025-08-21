@@ -5,6 +5,7 @@ require('dotenv').config();
 
 const connectDB = require('./database/db');
 const authRoutes = require('./routes/auth.routes');
+const cardRoutes = require('./routes/card.routes');
 const progressRoutes = require('./routes/progress.routes');
 
 const app = express();
@@ -66,11 +67,15 @@ const startServer = async () => {
     // Routes
     try {
       console.log('Loading auth routes...');
-      app.use('/auth', authRoutes);
+      app.use('/api/auth', authRoutes);
       console.log('Auth routes loaded successfully');
       
+      console.log('Loading card routes...');
+      app.use('/api/cards', cardRoutes);
+      console.log('Card routes loaded successfully');
+      
       console.log('Loading progress routes...');
-      app.use('/progress', progressRoutes);
+      app.use('/api/progress', progressRoutes);
       console.log('Progress routes loaded successfully');
     } catch (error) {
       console.error('Error setting up routes:', error);
