@@ -35,7 +35,7 @@ const startServer = async () => {
     try {
       // Configure CORS to allow frontend requests
       const corsOptions = {
-        origin: ['http://localhost:4200', 'http://127.0.0.1:4200', 'http://localhost:3000', 'http://127.0.0.1:3000'],
+        origin: ['http://localhost:4200', 'http://127.0.0.1:4200', 'http://localhost:3000', 'http://127.0.0.1:3000', ],
         credentials: true,
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
         allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
@@ -120,39 +120,7 @@ const startServer = async () => {
       res.status(404).json({ message: 'Route not found' });
     });
     
-    // Start HTTP server
-    console.log('Starting HTTP server...');
-    try {
-      console.log('About to call app.listen...');
-      const server = app.listen(PORT, '0.0.0.0', () => {
-        console.log(`🚀 Server running on port ${PORT}`);
-        console.log(`📁 Upload directory: ${path.join(__dirname, 'uploads')}`);
-        console.log(`🌐 Health check: http://127.0.0.1:${PORT}/health`);
-        console.log(`🌐 Server accessible on: http://0.0.0.0:${PORT}`);
-        console.log('✅ HTTP server callback executed successfully');
-      });
-      
-      console.log('app.listen called, server object created');
-      
-      // Add error handling for the server
-      server.on('error', (error) => {
-        console.error('Server error:', error);
-        if (error.code === 'EADDRINUSE') {
-          console.error(`Port ${PORT} is already in use`);
-        }
-        throw error;
-      });
-      
-      server.on('listening', () => {
-        console.log('✅ Server is now listening on port', PORT);
-      });
-      
-      console.log('HTTP server started successfully');
-    } catch (error) {
-      console.error('Failed to start HTTP server:', error);
-      throw error;
-    }
-    
+    console.log('HTTP server started successfully');
   } catch (error) {
     console.error('Failed to start server:', error);
     process.exit(1);
@@ -161,3 +129,6 @@ const startServer = async () => {
 
 // Start the server
 startServer();
+
+// Instead, export the app object for Vercel
+module.exports = app;
